@@ -34,6 +34,9 @@ public class FenetreConnexion extends JFrame implements ActionListener {
 	Connection connection = maConnexion.connecterdb();
 	
 	FenetreConnexion(){
+		Image icone = Toolkit.getDefaultToolkit().getImage("logo.jpg");
+		this.setIconImage(icone);
+		
 		this.setTitle("Connexion"); //Titre de la fenêtre.
 		/* Fermeture de la fenêtre lorsque l'on clique sur la croix
 		  (sinon la fenêtre sera fermée mais le programme toujours en cours d'exécution).*/
@@ -90,6 +93,7 @@ public class FenetreConnexion extends JFrame implements ActionListener {
 			maConnexion.connexionComptable(strLogin, strMdp);
 			
 			if(maConnexion.getValidCo() == true){
+				this.dispose();
 				FenetreComptable maFenetreComptable = new FenetreComptable();
 			}
 		else{

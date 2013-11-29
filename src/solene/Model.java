@@ -70,6 +70,7 @@ public class Model{
 				setValidCo(true);
 				System.out.println("Connexion Réussi");
 			}
+			
 			rs.close();
 		}
 		

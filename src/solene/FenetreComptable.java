@@ -12,6 +12,9 @@ public class FenetreComptable extends JFrame  implements ActionListener {
 	private JMenu menuQuitter;
 	
 	FenetreComptable(){
+		Image icone = Toolkit.getDefaultToolkit().getImage("logo.jpg");
+		this.setIconImage(icone);
+		
 		this.setTitle("GSB - Home"); //Titre de la fenêtre.
 		/* Fermeture de la fenêtre lorsque l'on clique sur la croix
 		  (sinon la fenêtre sera fermée mais le programme toujours en cours d'exécution).*/
