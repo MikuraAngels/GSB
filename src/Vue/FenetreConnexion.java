@@ -1,6 +1,8 @@
-package solene;
+package Vue;
 
 import javax.swing.*;
+
+import Model.Model;
 
 import com.mysql.*;
 import java.awt.*;
@@ -33,7 +35,7 @@ public class FenetreConnexion extends JFrame implements ActionListener {
 	Model maConnexion = new Model();
 	Connection connection = maConnexion.connecterdb();
 	
-	FenetreConnexion(){
+	public FenetreConnexion(){
 		Image icone = Toolkit.getDefaultToolkit().getImage("logo.jpg");
 		this.setIconImage(icone);
 		

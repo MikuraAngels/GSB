@@ -1,4 +1,5 @@
-package solene;
+package Model;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -60,7 +61,7 @@ public class Model{
 		try {
 			st1 = connect.createStatement();
 			ResultSet rs = st1.executeQuery("SELECT login, mdp " +
-											"FROM visiteur " +
+											"FROM utilisateur " +
 											"WHERE login='" + monLogin + "' AND mdp='" + monMdp +"' AND statut='Comptable'");
 			
 			while(rs.next()){

@@ -1,4 +1,7 @@
-package solene;
+package Controleur;
+
+import Vue.FenetreConnexion;
+
 public class Main {
 
 	/**

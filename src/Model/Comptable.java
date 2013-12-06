@@ -1,4 +1,4 @@
-package solene;
+package Model;
 public class Comptable {
 	
 	private String nom;
