@@ -26,7 +26,9 @@ public class v_FenetreConnexion extends JFrame implements ActionListener {
 	// Label 
 	private JLabel lblLogin;
 	private JLabel lblMdp;
-
+	private JLabel lblHtml;
+	private JLabel image;
+	
 	// Champs de texte
 	private JTextField jtxLogin; 
 	private JPasswordField jpxMdp;
@@ -41,7 +43,7 @@ public class v_FenetreConnexion extends JFrame implements ActionListener {
 	
 	// Boite de dialogue
 	private JOptionPane jop;	
-	private JOptionPane jop2;	
+		// private JOptionPane jop2;	
 	
 	// Déclaration de la connexion
 	m_Model maConnexion = new m_Model();
@@ -51,22 +53,33 @@ public class v_FenetreConnexion extends JFrame implements ActionListener {
 	/**                          CONTRUCTEUR                        */
 	public v_FenetreConnexion(){
 		
-		// Déclaration du logo GSB comme icône
-		Image icone = Toolkit.getDefaultToolkit().getImage("logo.jpg");
-		this.setIconImage(icone); // Ajoute l'icône à la fenêtre
 		
+		
+		// Déclaration du logo GSB comme icône
+		Image icone = Toolkit.getDefaultToolkit().getImage("logo.png");
+		this.setIconImage(icone); // Ajoute l'icône à la fenêtre
+		this.setSize(500, 250); // Determine la taille de la fenêtre.
 		this.setTitle("Connexion"); //Titre de la fenêtre.
 		/* Fermeture de la fenêtre lorsque l'on clique sur la croix
 		 * (sinon la fenêtre sera fermée mais le programme toujours en cours d'exécution).*/
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setResizable(false); // On interdit le redimensionnement de la fenêtre.
+		this.setResizable(false); // On interdit le redimensionnement de la ²fenêtre.
 		
 		// Paramètre des panels
 			//-> Création panel
 		panel = new JPanel();
-		this.getContentPane().add(panel);
+			// Ajout du panel au conteneur
+		this.getContentPane().add(panel, BorderLayout.CENTER);
+			// Création du logo de GSB pour le mettre dans le panel
+		image = new JLabel(new ImageIcon("logo.png"));
+			// Couleur de fond blanc pour le panel
+		panel.setBackground(Color.WHITE);
+			// Ajout du logo de GSB dans le panel
+		panel.add(image);
+		lblHtml = new JLabel("<html><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>");
 			//-> Création des panel avec ajout de Layout
-	    panel_principal = new JPanel(new BorderLayout()); 
+		panel.add(lblHtml);
+		panel_principal = new JPanel(new BorderLayout()); 
 	    panel_label = new JPanel(new GridLayout(2,1));
 	    panel_field = new JPanel(new GridLayout(2,1)); 
 	    panel_button = new JPanel(new GridLayout(1,2));
@@ -77,11 +90,15 @@ public class v_FenetreConnexion extends JFrame implements ActionListener {
 	   
 	    // Paramètre des Labels
 	    lblLogin = new JLabel ("Login");
+	    lblLogin.setOpaque(true); // Met Opaque le fond du Label Login
+	    lblLogin.setBackground(Color.WHITE); // Couleur de fond blanc pour le Label
 	    panel_label.add(lblLogin); // Ajout du Label au panel_label 
 	    jtxLogin = new JTextField();
 	    panel_field.add(jtxLogin); // Ajout du Champs de texte au panel_field
 	    
 	    lblMdp = new JLabel ("Mot de passe");
+	    lblMdp.setOpaque(true); // Met Opaque le fond du Label Mot de Passe
+	    lblMdp.setBackground(Color.WHITE); // Couleur de fond blanc pour le Label
 	    panel_label.add(lblMdp); // Ajout du Label au panel_label 
 	    jpxMdp = new JPasswordField();
 	    panel_field.add(jpxMdp);  // Ajout du Champs de texte au panel_field
@@ -100,7 +117,7 @@ public class v_FenetreConnexion extends JFrame implements ActionListener {
 	    btnAnnuler.addActionListener(this);
 	    btnConnexion.addActionListener(this);
 	    
-	    this.pack(); // Compacte la fenêtre
+	    //this.pack(); // Compacte la fenêtre
 		this.setLocationRelativeTo(null);// Permet d'avoir la fenêtre au milieu de l'écran
 	    this.setVisible(true); // Permet de voir la fenêtre
 	 
@@ -108,12 +125,12 @@ public class v_FenetreConnexion extends JFrame implements ActionListener {
 
 	@SuppressWarnings({ "static-access", "unused" })
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == btnAnnuler){
+		/*if (e.getSource() == btnAnnuler){
 			// Affiche un message de fermeture de fenêtre lors d'un clic sur le bouton Annuler
 			jop2.showMessageDialog(null, "Fermeture de la fenêtre.", "Attention", JOptionPane.INFORMATION_MESSAGE);
 			// Ferme la fenêtre
 			this.dispose();
-		}
+		}*/
 		
 		if (e.getSource() == btnConnexion){
 			// Récupère le Login pour le mettre dans un String

@@ -7,6 +7,7 @@ package Model;
 
 // Importation des classes nécessaire
 import java.sql.*;
+import java.util.ArrayList;
 
 public class m_Model{
 	/**                          DECLARATION                       **/ 
@@ -14,6 +15,7 @@ public class m_Model{
 	static Connection connect = null;
 	boolean ValidCo;
  	Statement st1;
+	private static ArrayList <m_Visiteur> mesVisiteurs;
 	
  	/* Permet de récupéré la valeur (false ou true) 
  	 * Pour ajouter une erreur lors de la connexion
@@ -114,5 +116,25 @@ public class m_Model{
 		
 		// Récupère la valeur du setValidCo(...)
 		getValidCo();
+	}
+	
+	public static ArrayList<m_Visiteur> afficherVisiteur() {
+		mesVisiteurs = new ArrayList<m_Visiteur>();
+		PreparedStatement st2;
+		try {
+			connect = connecterdb();		
+			st2 = connect.prepareStatement("SELECT nom, prenom, " +
+										   "FROM utilisateur " +
+										   "WHERE statut='visiteur';");
+			ResultSet rs = st2.executeQuery();
+			while (rs.next()) {
+				mesVisiteurs.add(new m_Visiteur(rs.getString(1), rs.getString(2)));
+			}
+		} catch (SQLException e) {
+		
+			System.out.println("Erreur requete");
+		}
+
+		return mesVisiteurs;
 	}
 }

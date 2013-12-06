@@ -8,6 +8,7 @@ package Vue;
 //Importation des classes nécessaire
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
 
 @SuppressWarnings("serial")
@@ -23,10 +24,10 @@ public class v_FenetreComptable extends JFrame  implements ActionListener {
 	private JMenu menuVisuVisiteur;
 	private JMenu menuValiderFiche;
 	private JMenu menuQuitter;
+
 	
 	/**                         CONSTRUCTEUR                      **/ 
 	v_FenetreComptable(){
-
 		// Déclaration du logo GSB comme icône
 		Image icone = Toolkit.getDefaultToolkit().getImage("logo.jpg");
 		this.setIconImage(icone); // Ajoute l'icône à la fenêtre
@@ -54,6 +55,7 @@ public class v_FenetreComptable extends JFrame  implements ActionListener {
 				
 		panel = new JPanel(); // Création du panel
 		this.getContentPane().add(panel); // Ajout du panel au conteneur
+				
 		
 		// ActionListener
 		menuQuitter.addActionListener(this);
