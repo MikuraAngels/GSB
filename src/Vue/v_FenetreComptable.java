@@ -4,14 +4,14 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class FenetreComptable extends JFrame  implements ActionListener {
+public class v_FenetreComptable extends JFrame  implements ActionListener {
 	private JMenuBar menu;
 	private JMenu menuAccueil;
 	private JMenu menuVisuVisiteur;
 	private JMenu menuValiderFiche;
 	private JMenu menuQuitter;
 	
-	FenetreComptable(){
+	v_FenetreComptable(){
 		Image icone = Toolkit.getDefaultToolkit().getImage("logo.jpg");
 		this.setIconImage(icone);
 		

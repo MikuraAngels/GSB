@@ -1,10 +1,10 @@
 package Model;
-public class Comptable {
+public class m_Comptable {
 	
 	private String nom;
 	private String prenom;
 	
-	public Comptable(String unNom, String unPrenom){
+	public m_Comptable(String unNom, String unPrenom){
 		this.nom=unNom;
 		this.prenom=unPrenom;
 		

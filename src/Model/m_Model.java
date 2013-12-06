@@ -1,9 +1,8 @@
 package Model;
 
 import java.sql.*;
-import java.util.ArrayList;
 
-public class Model{
+public class m_Model{
 	static Connection connect = null;
 	boolean ValidCo;
  	Statement st1;
@@ -18,7 +17,7 @@ public class Model{
 	}
 
 
-	public Model() {
+	public m_Model() {
 
 	}
 	

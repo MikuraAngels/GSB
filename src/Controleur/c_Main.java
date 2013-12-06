@@ -1,15 +1,15 @@
 package Controleur;
 
-import Vue.FenetreConnexion;
+import Vue.v_FenetreConnexion;
 
-public class Main {
+public class c_Main {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		FenetreConnexion maConnexion = new FenetreConnexion();
+		v_FenetreConnexion maConnexion = new v_FenetreConnexion();
 	}
 
 }

@@ -2,14 +2,14 @@ package Vue;
 
 import javax.swing.*;
 
-import Model.Model;
+import Model.m_Model;
 
 import com.mysql.*;
 import java.awt.*;
 import java.awt.event.* ;
 import java.sql.Connection;
 
-public class FenetreConnexion extends JFrame implements ActionListener {
+public class v_FenetreConnexion extends JFrame implements ActionListener {
 	
 	private JPanel panel;
 	private JPanel panel_principal;
@@ -32,10 +32,10 @@ public class FenetreConnexion extends JFrame implements ActionListener {
 	private JOptionPane jop;	
 	private JOptionPane jop2;	
 	
-	Model maConnexion = new Model();
+	m_Model maConnexion = new m_Model();
 	Connection connection = maConnexion.connecterdb();
 	
-	public FenetreConnexion(){
+	public v_FenetreConnexion(){
 		Image icone = Toolkit.getDefaultToolkit().getImage("logo.jpg");
 		this.setIconImage(icone);
 		
@@ -96,7 +96,7 @@ public class FenetreConnexion extends JFrame implements ActionListener {
 			
 			if(maConnexion.getValidCo() == true){
 				this.dispose();
-				FenetreComptable maFenetreComptable = new FenetreComptable();
+				v_FenetreComptable maFenetreComptable = new v_FenetreComptable();
 			}
 		else{
 				jop.showMessageDialog(null, "Login ou Mot de passe incorrect.", "Erreur", JOptionPane.ERROR_MESSAGE);

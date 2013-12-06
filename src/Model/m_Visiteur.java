@@ -1,12 +1,11 @@
 package Model;
 
-public class Visiteur {
-	
+public class m_Visiteur {
 	private String nom;
 	private String prenom;
 
 	
-	public Visiteur(String sonNom, String sonPrenom){
+	public m_Visiteur(String sonNom, String sonPrenom){
 		this.nom=sonNom;
 		this.prenom=sonPrenom;	
 	}
